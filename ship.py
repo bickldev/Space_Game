@@ -15,3 +15,9 @@ class Ship:
 
     def repair():
         pass
+
+    def set_location(self, coordinates):
+        self.location = coordinates
+
+    def get_location(self):
+        return self.location

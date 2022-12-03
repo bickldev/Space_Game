@@ -12,4 +12,4 @@ class System:
         self.current_ship = current_ship
 
     def get_ship(self):
-        pass
+        self.current_ship = None

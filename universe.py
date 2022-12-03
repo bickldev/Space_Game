@@ -13,3 +13,9 @@ class Universe:
     def initialize_ship(self):
         self.current_ship = Ship()
         self.universe[0][0].set_ship(self.current_ship)
+
+    def move_ship(self):
+        current_location = self.current_ship.get_location()
+        self.universe[current_location[0]][current_location[1]].get_ship()
+        self.universe[1][1].set_ship(self.current_ship)
+        self.current_ship.set_location([1,1])
