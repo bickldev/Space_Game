@@ -1,3 +1,4 @@
+import random
 from ship import Ship
 
 
@@ -10,6 +11,12 @@ class System:
 
     def set_ship(self, current_ship):
         self.current_ship = current_ship
+        self.event = self.random_event()
+        
 
     def get_ship(self):
         self.current_ship = None
+
+    def random_event(self):
+        choices = ["Anomaly", "Battle", "Trader"]
+        return random.choice(choices)
