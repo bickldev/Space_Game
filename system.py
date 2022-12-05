@@ -1,6 +1,9 @@
 import random
+from anomaly import Anomaly
+from battle import Battle
 from ship import Ship
 from events import Events
+from trader import Trader
 
 
 class System:
@@ -10,8 +13,17 @@ class System:
     def set_ship(self, current_ship: Ship):
         self.current_ship = current_ship
         # Calls an event
-        # if self.current_ship.get_location() != [0,0]:
-        #     self.event = Events(self.random_event())
+        if self.current_ship.get_location() != [0,0]:
+            # self.event = Events(self.random_event())
+            self.event = self.random_event()
+            
+            match self.event:
+                case "Anomaly":
+                    self.current_event = Anomaly(self.event)
+                case "Battle":
+                    self.current_event = Battle(self.event)
+                case "Trader":
+                    self.current_event = Trader(self.event)
 
     def get_ship(self):
         self.current_ship = None
