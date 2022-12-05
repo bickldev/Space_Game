@@ -1,18 +1,17 @@
 import random
 from ship import Ship
+from events import Events
 
 
 class System:
     system_type = "S"
     current_ship : Ship
-    
-    def __init__(self):
-        pass
 
-    def set_ship(self, current_ship):
+    def set_ship(self, current_ship: Ship):
         self.current_ship = current_ship
-        self.event = self.random_event()
-        
+        # Calls an event
+        # if self.current_ship.get_location() != [0,0]:
+        #     self.event = Events(self.random_event())
 
     def get_ship(self):
         self.current_ship = None
