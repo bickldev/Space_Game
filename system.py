@@ -14,16 +14,17 @@ class System:
         self.current_ship = current_ship
         # Calls an event
         if self.current_ship.get_location() != [0,0]:
-            # self.event = Events(self.random_event())
-            self.event = self.random_event()
-            
-            match self.event:
-                case "Anomaly":
-                    self.current_event = Anomaly(self.event)
-                case "Battle":
-                    self.current_event = Battle(self.event)
-                case "Trader":
-                    self.current_event = Trader(self.event)
+            # 50/50 whether an event occurs
+            if random.randint(0, 1):
+                self.event = self.random_event()
+                
+                match self.event:
+                    case "Anomaly":
+                        self.current_event = Anomaly(self.event)
+                    case "Battle":
+                        self.current_event = Battle(self.event)
+                    case "Trader":
+                        self.current_event = Trader(self.event)
 
     def get_ship(self):
         self.current_ship = None

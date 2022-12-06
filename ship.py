@@ -1,6 +1,7 @@
 class Ship:
     size_options = ["small", "medium", "large"]
     speed_options = [1, 5, 10]
+    scanner = ["basic", "intermediate", "advanced"]
 
     def __init__(self):
         self.size = self.size_options[0]

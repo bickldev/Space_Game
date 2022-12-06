@@ -24,7 +24,7 @@ class Universe:
             self.universe[self.current_location[0]][self.current_location[1]].get_ship()
             self.current_ship.set_location(self.current_location)
             self.universe[1][1].set_ship(self.current_ship)
-            
+
         else:
             print("Can't move there!")
     
